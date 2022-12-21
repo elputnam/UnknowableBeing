@@ -10,6 +10,7 @@ function setup() {
   locx = width/2;
   locy = height/2;
   background(175, 100, 100);
+  frameRate(15);
 }
 
 function draw() {
@@ -22,9 +23,13 @@ function draw() {
   let a = atan2(random(height) - height / 2, random(width) - width / 2);
   rotate(a);
   rectMode(CENTER);
+  if (frameCount%5==0){
   rect(-10, 0, random(height), random(width*0.75));
+  }
   pop();
+  
   grid();
+  
 }
 
 function grid(){
